@@ -4,16 +4,6 @@
 
 @layer base {
   :root {
-    --bg-primary: #07090e;
-    --bg-secondary: #0b101c;
-    --bg-card: #0e1424;
-    --border-color: #1a243c;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-  }
-
-  .light {
     --bg-primary: #f8fafc;
     --bg-secondary: #f1f5f9;
     --bg-card: #ffffff;
@@ -23,68 +13,84 @@
     --text-muted: #64748b;
   }
 
+  .dark {
+    --bg-primary: #07090e;
+    --bg-secondary: #0b101c;
+    --bg-card: #0e1424;
+    --border-color: #1a243c;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+  }
+
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  /* Custom scrollbars */
+  /* Custom Clean Scrollbars */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: #07090e;
-  }
-  .light ::-webkit-scrollbar-track {
     background: #f1f5f9;
   }
+  .dark ::-webkit-scrollbar-track {
+    background: #07090e;
+  }
   ::-webkit-scrollbar-thumb {
-    background: #1e293b;
+    background: #cbd5e1;
     border-radius: 4px;
   }
-  .light ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+  .dark ::-webkit-scrollbar-thumb {
+    background: #1e293b;
   }
   ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
     background: #334155;
   }
 }
 
 @layer utilities {
-  .glass-card {
-    background: rgba(14, 20, 36, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  .subtle-grid {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
   }
 
-  .light .glass-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+  .dark .subtle-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   }
 
-  .glass-nav {
-    background: rgba(7, 9, 14, 0.82);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+  .card-elevated {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .light .glass-nav {
-    background: rgba(248, 250, 252, 0.88);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+  .card-elevated:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    transform: translateY(-2px);
   }
 
-  .glow-subtle {
-    box-shadow: 0 0 30px -5px rgba(59, 130, 246, 0.15);
+  .dark .card-elevated {
+    background-color: #0b0f19;
+    border-color: #1e293b;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
   }
 
-  .glow-cyan {
-    box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.15);
+  .dark .card-elevated:hover {
+    border-color: #334155;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
   }
 }
 

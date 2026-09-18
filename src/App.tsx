@@ -28,7 +28,7 @@ export function App() {
   const evisionCert = certifications.find((c) => c.id === 'evision-dotnet-cert') || null;
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 selection:bg-blue-600 selection:text-white relative">
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-[#07090e] text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white relative transition-colors duration-200">
       
       {/* Navigation */}
       <Navbar onOpenAdmin={() => setAdminModalOpen(true)} />

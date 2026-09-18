@@ -22,7 +22,6 @@ export const Projects: React.FC = () => {
     if (activeFilter === 'All') return true;
     if (project.category === activeFilter) return true;
 
-    // Multi-faceted filtering checks for technologies and architectural layers:
     if (activeFilter === 'Backend') {
       return (
         project.technologies.some((t) => t.includes('ASP.NET') || t.includes('REST') || t.includes('API')) ||
@@ -60,19 +59,19 @@ export const Projects: React.FC = () => {
   });
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-24 relative bg-[#f8fafc] dark:bg-[#07090e]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-800 mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Featured Case Studies</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white light:text-slate-900">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Engineered Projects & Systems
           </h2>
-          <p className="mt-3 text-base text-slate-400 light:text-slate-600">
+          <p className="mt-3 text-base text-slate-600 dark:text-slate-400 leading-relaxed">
             Real-world web, mobile, and backend systems built with Angular, ASP.NET, SQL Server, MySQL, and React Native.
           </p>
         </div>
@@ -85,10 +84,10 @@ export const Projects: React.FC = () => {
               <button
                 key={tab.value}
                 onClick={() => setActiveFilter(tab.value)}
-                className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all duration-200 border ${
+                className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all duration-150 border ${
                   isActive
-                    ? 'bg-blue-600 text-white border-blue-500 shadow-md shadow-blue-500/25 scale-105'
-                    : 'bg-slate-900/60 light:bg-white text-slate-300 light:text-slate-700 border-slate-800 light:border-slate-300 hover:border-slate-700 light:hover:border-slate-400'
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
+                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-slate-300 shadow-2xs'
                 }`}
               >
                 {tab.label}
@@ -98,7 +97,7 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}

@@ -13,7 +13,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [theme, setTheme] = useState<Theme>(() => {
     const savedTheme = localStorage.getItem('uttam_portfolio_theme') as Theme | null;
     if (savedTheme) return savedTheme;
-    return 'dark'; // Default dark mode as specified
+    return 'light'; // Default to modern light theme
   });
 
   useEffect(() => {

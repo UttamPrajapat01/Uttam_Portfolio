@@ -19,6 +19,7 @@ export interface PersonalInfo {
   currentTechExposure: string[];
   previousBackendExposure: string[];
   broaderSkills: string[];
+  profileImage?: string;
 }
 
 export type SkillCategory = 
@@ -97,6 +98,7 @@ export interface CertificationItem {
   topicsCovered: string[];
   practicalExposure: string[];
   certificateImage?: string;
+  certificatePdf?: string;
   hasOfficialProof: boolean;
 }
 

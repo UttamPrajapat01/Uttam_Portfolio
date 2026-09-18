@@ -19,9 +19,10 @@ export const personalInfo: PersonalInfo = {
   currentLocation: "Gandhinagar, Gujarat, India",
   phone: "+91 8302785702",
   email: "uttamprajapt66@gmail.com",
-  linkedInUrl: "https://www.linkedin.com/in/uttam-kumar-dev",
+  linkedInUrl: "https://www.linkedin.com/in/uttam-kumar-2846293a5/",
   gitHubUrl: "https://github.com/UttamPrajapat01",
   portfolioRepoUrl: "https://github.com/UttamPrajapat01/Uttam_Portfolio",
+  profileImage: "/profile.jpg",
   heroHeadline: "Hi, I'm Uttam Kumar",
   heroSupportingText: "I build modern web and mobile applications with clean user experiences, reliable backend systems, APIs, and scalable database solutions.",
   techHighlightLine: "React Native • TypeScript • JavaScript • ASP.NET • C# • PostgreSQL • MySQL",
@@ -583,6 +584,7 @@ export const certifications: CertificationItem[] = [
       "Official certificate issued on 27-AUG-2026 with verified company seal and executive signature."
     ],
     certificateImage: "/certificates/evision_dotnet_certificate.png",
+    certificatePdf: "/certificates/evision_dotnet_certificate.pdf",
     hasOfficialProof: true
   },
   {

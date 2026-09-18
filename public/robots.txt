@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://uttamkumar.dev/sitemap.xml
+Sitemap: https://uttam-portfolio-lpp9.onrender.com/sitemap.xml

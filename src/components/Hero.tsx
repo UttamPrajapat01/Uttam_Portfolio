@@ -11,7 +11,8 @@ import {
   ExternalLink,
   Code2,
   Database,
-  Smartphone
+  Smartphone,
+  Sparkles
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -66,8 +67,8 @@ export const AppNavigator: React.FC = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: true,
-          headerStyle: { backgroundColor: '#07090E' },
-          headerTintColor: '#38BDF8',
+          headerStyle: { backgroundColor: '#ffffff' },
+          headerTintColor: '#2563eb',
         }}
       >
         <Stack.Screen name="Catalog" component={CatalogScreen} />
@@ -122,10 +123,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   };
 
   return (
-    <section id="home" className="relative min-h-[92vh] flex items-center pt-28 pb-16 overflow-hidden">
-      {/* Subtle Background Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-blue-600/10 via-indigo-600/10 to-cyan-500/10 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute -top-12 right-0 w-96 h-96 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+    <section id="home" className="relative min-h-[90vh] flex items-center pt-28 pb-16 overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-[#f8fafc] dark:from-[#07090e] dark:to-[#090d16]">
+      {/* Subtle architectural background dot grid */}
+      <div className="absolute inset-0 subtle-grid opacity-60 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -134,47 +134,63 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           <div className="lg:col-span-7 flex flex-col space-y-6">
             
             {/* Status Pills */}
-            <div className="flex flex-wrap items-center gap-2.5">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>{personalInfo.currentRole}</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Available for Opportunities</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-800/60 text-slate-300 border border-slate-700/60">
-                <Briefcase className="w-3.5 h-3.5 text-indigo-400" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <Briefcase className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                 <span>{personalInfo.currentCompany}</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-slate-800/60 text-slate-300 border border-slate-700/60">
-                <MapPin className="w-3.5 h-3.5 text-rose-400" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <MapPin className="w-3.5 h-3.5 text-rose-500" />
                 <span>{personalInfo.currentLocation}</span>
               </div>
             </div>
 
-            {/* Main Headings */}
-            <div className="space-y-2">
-              <h2 className="text-sm font-semibold uppercase tracking-widest text-cyan-400">
-                {personalInfo.heroHeadline}
-              </h2>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white light:text-slate-900 leading-[1.15]">
-                {personalInfo.title}
-              </h1>
+            {/* Developer Avatar & Main Headings */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+              <div className="relative group shrink-0 w-24 h-24 sm:w-28 sm:h-28">
+                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 opacity-70 blur-[3px] group-hover:opacity-100 transition duration-300" />
+                <img
+                  src={personalInfo.profileImage || "/profile.jpg"}
+                  alt={personalInfo.name}
+                  className="relative w-full h-full object-cover rounded-2xl border-2 border-white dark:border-slate-800 shadow-md"
+                />
+                <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full" title="Active & Available" />
+              </div>
+
+              <div className="space-y-1.5">
+                <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 font-mono flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4" />
+                  <span>{personalInfo.heroHeadline}</span>
+                </div>
+                <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+                  {personalInfo.title}
+                </h1>
+                <p className="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">
+                  {personalInfo.name} • {personalInfo.currentRole} at <span className="text-blue-600 dark:text-blue-400">{personalInfo.currentCompany}</span>
+                </p>
+              </div>
             </div>
 
             {/* Supporting Text */}
-            <p className="text-base sm:text-lg text-slate-300 light:text-slate-700 max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
               {personalInfo.heroSupportingText}
             </p>
 
             {/* Technology Line Highlight */}
-            <div className="p-3 rounded-xl bg-slate-900/60 light:bg-slate-200/70 border border-slate-800/80 light:border-slate-300 text-xs sm:text-sm font-mono text-cyan-300 light:text-blue-800 flex items-center gap-2">
-              <Terminal className="w-4 h-4 text-blue-400 shrink-0" />
-              <span className="truncate">{personalInfo.techHighlightLine}</span>
+            <div className="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-mono text-slate-800 dark:text-cyan-300 flex items-center gap-2.5 shadow-sm">
+              <Terminal className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" />
+              <span className="truncate font-semibold">{personalInfo.techHighlightLine}</span>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
                 onClick={() => scrollTo('projects')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/25 transition-all duration-200 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-150 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <span>View My Work</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -182,14 +198,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
               <button
                 onClick={() => scrollTo('contact')}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-slate-850 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-slate-600 light:bg-white light:text-slate-800 light:border-slate-300 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-800 shadow-sm transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <span>Let's Connect</span>
               </button>
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-slate-900/90 hover:bg-slate-800 text-cyan-400 border border-cyan-500/30 hover:border-cyan-500/60 light:bg-slate-100 light:text-blue-600 light:border-blue-300 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/60 shadow-sm transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Resume</span>
@@ -198,21 +214,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <button
                 onClick={onOpenResume}
                 title="View Resume in Modal"
-                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-sm font-medium text-slate-400 hover:text-white light:text-slate-600 light:hover:text-black transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-3 rounded-xl text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
               >
                 <FileText className="w-4 h-4" />
                 <span className="underline underline-offset-4">View Resume</span>
               </button>
             </div>
 
-            {/* Quick contact / profiles */}
-            <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400 light:text-slate-600">
-              <span className="text-slate-500 font-medium">Quick Links:</span>
+            {/* Quick Contact & Profiles */}
+            <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-600 dark:text-slate-400">
+              <span className="text-slate-400 dark:text-slate-500 font-medium">Quick Connect:</span>
               <a 
                 href={personalInfo.linkedInUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-blue-400 transition-colors inline-flex items-center gap-1"
+                className="hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors inline-flex items-center gap-1"
               >
                 <span>LinkedIn</span>
                 <ExternalLink className="w-3 h-3 opacity-60" />
@@ -221,20 +237,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                 href={personalInfo.gitHubUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-cyan-400 transition-colors inline-flex items-center gap-1"
+                className="hover:text-slate-900 dark:hover:text-white font-medium transition-colors inline-flex items-center gap-1"
               >
                 <span>GitHub</span>
                 <ExternalLink className="w-3 h-3 opacity-60" />
               </a>
               <a 
                 href={`mailto:${personalInfo.email}`} 
-                className="hover:text-white transition-colors"
+                className="hover:text-slate-900 dark:hover:text-white transition-colors font-mono"
               >
                 {personalInfo.email}
               </a>
               <a 
                 href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} 
-                className="hover:text-white transition-colors"
+                className="hover:text-slate-900 dark:hover:text-white transition-colors font-mono"
               >
                 {personalInfo.phone}
               </a>
@@ -242,31 +258,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
           </div>
 
-          {/* Right Column: Code-Inspired Interactive Workspace */}
+          {/* Right Column: Clean Light-Themed Developer Workspace */}
           <div className="lg:col-span-5">
-            <div className="rounded-2xl bg-[#0b0f19] light:bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden">
+            <div className="rounded-2xl bg-white dark:bg-[#0b0f19] border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
               
               {/* Window Header */}
-              <div className="px-4 py-3 bg-[#07090e] border-b border-slate-800/80 flex items-center justify-between">
+              <div className="px-4 py-3 bg-slate-50 dark:bg-[#07090e] border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="ml-2 text-xs text-slate-400 font-mono">dev-environment v1.0</span>
+                  <div className="w-3 h-3 rounded-full bg-rose-400" />
+                  <div className="w-3 h-3 rounded-full bg-amber-400" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-400" />
+                  <span className="ml-2 text-xs text-slate-500 dark:text-slate-400 font-mono font-medium">editor v1.0</span>
                 </div>
 
                 <button
                   onClick={handleCopyCode}
-                  className="flex items-center gap-1 text-xs text-slate-400 hover:text-white transition-colors px-2 py-1 rounded bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60"
+                  className="flex items-center gap-1.5 text-xs text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"
                   title="Copy code snippet"
                 >
-                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                   <span>{copied ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
 
               {/* Code File Tabs */}
-              <div className="flex items-center overflow-x-auto bg-[#090d16] border-b border-slate-800/80 px-2 pt-2 scrollbar-none">
+              <div className="flex items-center overflow-x-auto bg-slate-100/80 dark:bg-[#090d16] border-b border-slate-200 dark:border-slate-800 px-2 pt-2 scrollbar-none">
                 {(Object.keys(codeSnippets) as CodeTabKey[]).map((tabKey) => {
                   const item = codeSnippets[tabKey];
                   const Icon = item.icon;
@@ -277,8 +293,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                       onClick={() => setActiveCodeTab(tabKey)}
                       className={`flex items-center gap-1.5 px-3 py-2 text-xs font-mono rounded-t-lg transition-colors border-t-2 ${
                         isActive
-                          ? 'bg-[#0b0f19] text-blue-400 border-blue-500 font-medium'
-                          : 'text-slate-400 hover:text-slate-200 border-transparent hover:bg-slate-850/50'
+                          ? 'bg-white dark:bg-[#0b0f19] text-blue-600 dark:text-blue-400 border-blue-600 font-semibold shadow-sm'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 border-transparent'
                       }`}
                     >
                       <Icon className="w-3.5 h-3.5" />
@@ -289,12 +305,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               </div>
 
               {/* Code Display */}
-              <div className="p-4 bg-[#0b0f19] text-slate-200 font-mono text-xs overflow-x-auto max-h-[360px] leading-relaxed">
-                <div className="text-slate-500 text-[11px] mb-2 pb-2 border-b border-slate-800 flex items-center justify-between">
+              <div className="p-4 bg-slate-900 text-slate-200 font-mono text-xs overflow-x-auto max-h-[360px] leading-relaxed">
+                <div className="text-slate-400 text-[11px] mb-2 pb-2 border-b border-slate-800 flex items-center justify-between">
                   <span>Language: {codeSnippets[activeCodeTab].lang}</span>
-                  <span className="flex items-center gap-1.5 text-emerald-400">
+                  <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    Ready
+                    Clean Architecture
                   </span>
                 </div>
                 <pre className="text-slate-300">
@@ -303,12 +319,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               </div>
 
               {/* Terminal status bar */}
-              <div className="px-4 py-2 bg-[#07090e] border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+              <div className="px-4 py-2.5 bg-slate-50 dark:bg-[#07090e] border-t border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-500 dark:text-slate-400 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-blue-400">⚡ Core Stack:</span>
-                  <span className="text-slate-300">React Native • ASP.NET • SQL</span>
+                  <span className="text-blue-600 dark:text-blue-400 font-semibold">Core Stack:</span>
+                  <span className="text-slate-700 dark:text-slate-300 font-medium">React Native • ASP.NET • SQL</span>
                 </div>
-                <span className="text-slate-500">UTF-8</span>
+                <span>UTF-8</span>
               </div>
 
             </div>
