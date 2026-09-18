@@ -9,6 +9,7 @@ export interface PersonalInfo {
   email: string;
   linkedInUrl: string;
   gitHubUrl: string;
+  portfolioRepoUrl?: string;
   heroHeadline: string;
   heroSupportingText: string;
   techHighlightLine: string;
