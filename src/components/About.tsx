@@ -167,7 +167,7 @@ export const About: React.FC<AboutProps> = ({ onOpenResume }) => {
               <div>
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-cyan-400 mb-2.5 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                  <span>Current Technology Exposure (SolvoSky)</span>
+                  <span>Current Technology Exposure ({personalInfo.currentCompany})</span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {personalInfo.currentTechExposure.map((tech) => (

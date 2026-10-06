@@ -1,12 +1,12 @@
 # Uttam Kumar — Full-Stack Developer Portfolio
 
-A dynamic, high-performance, and responsive developer portfolio website built for **Uttam Kumar**, Full-Stack Developer at **SolvoSky Technologies**, showcasing mobile applications, web portals, enterprise ASP.NET backend systems, and relational databases.
+A dynamic, high-performance, and responsive developer portfolio website built for **Uttam Kumar**, Full-Stack Developer at **[Aadhaya Aaradhaya Tech](https://www.aadhyaaradhya.com)**, showcasing mobile applications, web portals, enterprise ASP.NET backend systems, and relational databases.
 
 ---
 
 ## 🌟 Professional Highlights
 
-- **Current Role**: Full-Stack Developer at **SolvoSky Technologies**, Gandhinagar, Gujarat (2026 – Present).
+- **Current Role**: Full-Stack Developer at **[Aadhaya Aaradhaya Tech](https://www.aadhyaaradhya.com)**, Gandhinagar, Gujarat (2026 – Present).
 - **Core Technology Specialization**: React Native • TypeScript • JavaScript • ASP.NET • C# • PostgreSQL • MySQL.
 - **Previous Experience**: Software Engineer Intern at **Evision Info Tech Solution Pvt. Ltd.** (Jan 2026 – Jun 2026, 6 Months). Contributed to the live production Marcaria DNS Admin Core Panel.
 - **Verified Credentials**:

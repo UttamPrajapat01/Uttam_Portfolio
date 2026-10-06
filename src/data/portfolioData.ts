@@ -15,7 +15,8 @@ export const personalInfo: PersonalInfo = {
   title: "Full-Stack Developer",
   subTitle: "React Native • TypeScript • JavaScript • ASP.NET • C# • PostgreSQL • MySQL",
   currentRole: "Full-Stack Developer",
-  currentCompany: "SolvoSky Technologies",
+  currentCompany: "Aadhaya Aaradhaya Tech",
+  currentCompanyUrl: "https://www.aadhyaaradhya.com",
   currentLocation: "Gandhinagar, Gujarat, India",
   phone: "+91 8302785702",
   email: "uttamprajapt66@gmail.com",
@@ -28,7 +29,7 @@ export const personalInfo: PersonalInfo = {
   techHighlightLine: "React Native • TypeScript • JavaScript • ASP.NET • C# • PostgreSQL • MySQL",
   aboutText1: "I am a Full-Stack Developer with a strong engineering foundation in backend systems, database management, and modern application development. I specialize in building end-to-end web and mobile applications that bridge intuitive user interfaces with high-performance, secure backend architectures.",
   aboutText2: "My journey began with deep backend and database development using ASP.NET, C#, MVC, Entity Framework, and SQL Server/PostgreSQL. During my 6-month Software Engineer Internship at Evision Info Tech Solution, I contributed to the production Marcaria DNS Admin Core Panel, building backend functionalities for domain administration and enterprise workflows.",
-  aboutText3: "Today at SolvoSky Technologies, I leverage this solid backend discipline to deliver comprehensive full-stack and mobile solutions using React Native, TypeScript, JavaScript, PostgreSQL, MySQL, and REST APIs, covering the full application development lifecycle from conception to production.",
+  aboutText3: "Today at Aadhaya Aaradhaya Tech, I leverage this solid backend discipline to deliver comprehensive full-stack and mobile solutions using React Native, TypeScript, JavaScript, PostgreSQL, MySQL, and REST APIs, covering the full application development lifecycle from conception to production.",
   currentTechExposure: [
     "React Native",
     "TypeScript",
@@ -380,9 +381,10 @@ export const skillsList: SkillItem[] = [
 
 export const experiences: ExperienceItem[] = [
   {
-    id: "solvosky",
+    id: "aadhya-aaradhya",
     role: "Full-Stack Developer",
-    company: "SolvoSky Technologies",
+    company: "Aadhaya Aaradhaya Tech",
+    companyUrl: "https://www.aadhyaaradhya.com",
     location: "Gandhinagar, Gujarat",
     period: "2026 – Present",
     durationText: "Current Position",
@@ -413,7 +415,7 @@ export const experiences: ExperienceItem[] = [
       "REST APIs",
       "Full-Stack Tools"
     ],
-    notice: "Active professional role at SolvoSky Technologies; projects and responsibilities can be dynamically updated."
+    notice: "Active professional role at Aadhaya Aaradhaya Tech; projects and responsibilities can be dynamically updated."
   },
   {
     id: "evision",
@@ -448,6 +450,8 @@ export const experiences: ExperienceItem[] = [
       "SQL Server",
       "PostgreSQL"
     ],
+    certificatePdf: "/certificates/evision_dotnet_certificate.pdf",
+    certificateImage: "/certificates/evision_dotnet_certificate.png",
     notice: "Official completion certificate verified and issued on 27-AUG-2026 by EVISION IT SOLUTION."
   }
 ];
@@ -652,7 +656,7 @@ export const developerJourney: DeveloperJourneyMilestone[] = [
   {
     year: "2026 – Present",
     title: "Full-Stack Developer (Current Position)",
-    subtitle: "SolvoSky Technologies, Gandhinagar, Gujarat",
+    subtitle: "Aadhaya Aaradhaya Tech, Gandhinagar, Gujarat",
     description: "Engineering modern web and mobile applications using React Native, TypeScript, JavaScript, PostgreSQL, MySQL, REST APIs, and full-stack development tools.",
     badge: "Current Milestone"
   }

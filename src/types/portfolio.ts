@@ -4,6 +4,7 @@ export interface PersonalInfo {
   subTitle: string;
   currentRole: string;
   currentCompany: string;
+  currentCompanyUrl?: string;
   currentLocation: string;
   phone: string;
   email: string;
@@ -44,6 +45,7 @@ export interface ExperienceItem {
   id: string;
   role: string;
   company: string;
+  companyUrl?: string;
   location: string;
   period: string;
   durationText: string;
@@ -53,6 +55,8 @@ export interface ExperienceItem {
   responsibilities: string[];
   technologies: string[];
   notice?: string;
+  certificatePdf?: string;
+  certificateImage?: string;
 }
 
 export type ProjectFilterCategory = 'All' | 'Web' | 'Mobile' | 'Backend' | 'Full-Stack' | 'Database';
